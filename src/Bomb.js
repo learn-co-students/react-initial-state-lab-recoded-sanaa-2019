@@ -6,12 +6,17 @@ export default class Bomb extends Component{
   this.state = {
     secondsLeft: this.props.initialCount
   }
-  render(){
-    if(this.state.secondsLeft > 0){
+}
+  widgetText = () =>{
+    if(this.state.secondsLeft !== 0){
       return (<p>{this.state.secondsLeft} seconds left before I go boom!</p>);
     }else{
       return (<p>Boom!</p>);
     }
   }
-}
+  render(){
+    return(
+      <div>{this.widgetText()}</div>
+    );
+  }
 }
